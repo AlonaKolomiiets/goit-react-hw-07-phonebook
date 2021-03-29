@@ -1,30 +1,23 @@
-// import { createStore } from "redux";
-// import rootReducer from "./toolkit/reducers/index";
-// import { composeWithDevTools } from "redux-devtools-extension";
-
-// const store = createStore(rootReducer, composeWithDevTools());
-
-// export default store;
-
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
-import {
-  persistStore,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-} from "redux-persist";
+// import {
+//   persistStore,
+//   FLUSH,
+//   REHYDRATE,
+//   PAUSE,
+//   PERSIST,
+//   PURGE,
+//   REGISTER,
+// } from "redux-persist";
 import logger from "redux-logger";
 import rootReducer from "./toolkit/reducers/index";
 
 const middleware = [
-  ...getDefaultMiddleware({
-    serializableCheck: {
-      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-    },
-  }),
+  // ...getDefaultMiddleware({
+  //   serializableCheck: {
+  //     ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+  //   },
+  // }),
+  ...getDefaultMiddleware(),
   logger,
 ];
 export const store = configureStore({
@@ -33,4 +26,4 @@ export const store = configureStore({
   devTools: process.env.NODE_ENV === "development",
 });
 
-export const persistor = persistStore(store);
+// export const persistor = persistStore(store);

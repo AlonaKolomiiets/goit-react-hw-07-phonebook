@@ -7,24 +7,6 @@ import Filter from "./components/Filter/Filter";
 const App = () => {
   const contacts = useSelector((state) => state.contacts.items);
   const filter = useSelector((state) => state.contacts.filter);
-  // const dispatch = useDispatch();
-
-  // const inputHandler = ({ target }) => {
-  //   const { value } = target;
-
-  //   dispatch(changeFilter(value));
-  // };
-
-  // useEffect(() => {
-  //   try {
-  //     const contactsLocalStorage = localStorage.getItem("contacts");
-
-  //     contactsLocalStorage &&
-  //       dispatch(initialContacts(JSON.parse(contactsLocalStorage)));
-  //   } catch {
-  //     console.log("Невалидный JSON");
-  //   }
-  // }, []);
 
   const filterContacts = () => {
     if (!filter.length) {
@@ -35,25 +17,6 @@ const App = () => {
       );
     }
   };
-  // const uniqueContact = (name) => {
-  //   return contacts.some(
-  //     (contact) => contact.name.toLowerCase() === name.toLowerCase()
-  //   );
-  // };
-
-  // const add = (contactObj) => {
-  //   uniqueContact(contactObj.name)
-  //     ? alert(`${contactObj.name} is already in contacts`)
-  //     : dispatch(addContact(contactObj));
-  // };
-
-  // const deleteContacts = (id) => {
-  //   dispatch(deleteContact(id));
-  // };
-
-  // useEffect(() => {
-  //   localStorage.setItem("contacts", JSON.stringify(contacts));
-  // }, [contacts]);
 
   return (
     <div>

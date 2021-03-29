@@ -38,28 +38,3 @@ const contacts = createReducer(initialState, {
 
 export default contacts;
 
-// const contacts = (state = initialState, action) => {
-//   switch (action.type) {
-//     case ADD_CONTACT:
-//       return { ...state, items: [...state.items, action.payload] };
-//     case DELETE_CONTACT:
-//       return {
-//         ...state,
-//         items: state.items.filter((item) => item.id !== action.payload),
-//       };
-//     case CHANGE_FILTER:
-//       return {
-//         ...state,
-//         filter: action.payload,
-//       };
-//     case INITIAL_CONTACT:
-//       return {
-//         ...state,
-//         items: action.payload,
-//       };
-//     default:
-//       return state;
-//   }
-// };
-
-// export default contacts;
