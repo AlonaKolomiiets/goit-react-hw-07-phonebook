@@ -1,16 +1,6 @@
 {
   "contacts": [
     {
-      "id": "id-1",
-      "name": "Rosie Simpson",
-      "number": "459-12-56"
-    },
-    {
-      "id": "id-2",
-      "name": "Hermione Kline",
-      "number": "443-89-12"
-    },
-    {
       "id": "id-3",
       "name": "Eden Clements",
       "number": "645-17-79"
@@ -21,9 +11,19 @@
       "number": "227-91-26"
     },
     {
+      "name": "Vera2",
+      "number": "333333",
+      "id": "7e3257c2-e813-47d7-8102-921885f78052"
+    },
+    {
       "name": "anna-",
+      "number": "333333",
+      "id": "4a9921fe-7bd9-4b69-b67f-a7dec655b068"
+    },
+    {
+      "name": "alegraw",
       "number": "444444",
-      "id": "d454ba84-09d4-4dd4-81c5-6f65198ad7f6"
+      "id": "e4852b1d-264c-456a-9e39-500ba16420d5"
     }
   ]
 }

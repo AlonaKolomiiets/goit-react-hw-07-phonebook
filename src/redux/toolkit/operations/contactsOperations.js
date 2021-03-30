@@ -13,6 +13,14 @@ import {
 
 axios.defaults.baseURL = "http://localhost:3000";
 
+export const initialContacts = () => (dispatch) => {
+  dispatch(initialContactsRequest());
+  axios
+    .get(`/contacts`)
+    .then(({ data }) => dispatch(initialContactsSuccess(data)))
+    .catch((error) => dispatch(initialContactsError(error)));
+};
+
 export const addContact = (contact) => (dispatch) => {
   dispatch(addContactRequest());
   axios
@@ -27,12 +35,4 @@ export const deleteContact = (id) => (dispatch) => {
     .delete(`/contacts/${id}`)
     .then(() => dispatch(deleteContactSuccess(id)))
     .catch((error) => dispatch(deleteContactError(error)));
-};
-
-export const initialContacts = () => (dispatch) => {
-  dispatch(initialContactsRequest());
-  axios
-    .get(`/contacts`)
-    .then(({data}) => dispatch(initialContactsSuccess(data)))
-    .catch((error) => dispatch(initialContactsError(error)));
 };
