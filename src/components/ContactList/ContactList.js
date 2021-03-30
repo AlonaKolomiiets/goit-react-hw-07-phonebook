@@ -5,7 +5,7 @@ import { getFilteredContacts } from "../../redux/toolkit/ selectors/contactsSel
 // import PropTypes from "prop-types";
 
 const ContactList = () => {
-  const filteredContacts = useSelector(getFilteredContacts());
+  const filteredContacts = useSelector(getFilteredContacts);
   return (
     <ul>
       {filteredContacts.map((contact) => (
