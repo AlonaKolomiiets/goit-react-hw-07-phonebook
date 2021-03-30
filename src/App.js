@@ -1,5 +1,6 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { initialContacts } from "./redux/toolkit/operations/contactsOperations";
 import ContactForm from "./components/ContactForm/ContactForm";
 import ContactList from "./components/ContactList";
 import Filter from "./components/Filter/Filter";
@@ -7,6 +8,11 @@ import Filter from "./components/Filter/Filter";
 const App = () => {
   const contacts = useSelector((state) => state.contacts.items);
   const filter = useSelector((state) => state.contacts.filter);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(initialContacts());
+  }, []);
 
   const filterContacts = () => {
     if (!filter.length) {

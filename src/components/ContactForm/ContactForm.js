@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addContact } from "../../redux/toolkit/actions/contacts";
+import { addContact } from "../../redux/toolkit/operations/contactsOperations";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./ContactForm.module.css";
 

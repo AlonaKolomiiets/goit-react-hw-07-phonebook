@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import contactsReducer from "./contactsReducer";
+import contactsReducers from "./contactsReducer";
 // import { persistReducer } from "redux-persist";
 // import storage from "redux-persist/lib/storage";
 
@@ -12,7 +12,7 @@ import contactsReducer from "./contactsReducer";
 // const persistedReducer = persistReducer(persistConfig, contactsReducer);
 
 const rootReducer = combineReducers({
-  contacts: contactsReducer,
+  contacts: contactsReducers,
 });
 
 export default rootReducer;
