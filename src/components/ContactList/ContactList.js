@@ -1,8 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import ContactListItem from "./ContactListItem";
-import PropTypes from "prop-types";
+import { getFilteredContacts } from "../../redux/toolkit/ selectors/contactsSelectors";
+// import PropTypes from "prop-types";
 
-const ContactList = ({ filteredContacts }) => {
+const ContactList = () => {
+  const filteredContacts = useSelector(getFilteredContacts());
   return (
     <ul>
       {filteredContacts.map((contact) => (
@@ -17,14 +20,14 @@ const ContactList = ({ filteredContacts }) => {
   );
 };
 
-ContactList.propTypes = {
-  filteredContacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-};
+// ContactList.propTypes = {
+//   filteredContacts: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.string.isRequired,
+//       name: PropTypes.string.isRequired,
+//       number: PropTypes.string.isRequired,
+//     })
+//   ).isRequired,
+// };
 
 export default ContactList;

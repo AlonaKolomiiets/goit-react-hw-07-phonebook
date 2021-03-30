@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addContact } from "../../redux/toolkit/operations/contactsOperations";
 import { v4 as uuidv4 } from "uuid";
+import { getContactsSelector } from "../../redux/toolkit/ selectors/contactsSelectors";
 import styles from "./ContactForm.module.css";
-
 
 const initialState = {
   name: "",
@@ -11,7 +11,7 @@ const initialState = {
 };
 
 const ContactForm = () => {
-  const contacts = useSelector((state) => state.contacts.items);
+  const contacts = useSelector(getContactsSelector);
   const dispatch = useDispatch();
 
   const uniqueContact = (name) => {
@@ -78,7 +78,5 @@ const ContactForm = () => {
     </div>
   );
 };
-
-
 
 export default ContactForm;
